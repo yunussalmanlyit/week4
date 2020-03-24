@@ -149,6 +149,7 @@ str(managers$Date)
 nrow(managers)
 nrow(include_list)
 managers <- rbind(managers, include_list)
+nrow(managers)
 
 # Change the date structure from the factor
 # to the required date structure
