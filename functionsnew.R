@@ -31,3 +31,30 @@ add_percent <- function(my_number, multiplier, no_digits)
 
 my_result <- add_percent(sample_vector, 3, 4)
 my_result
+
+# stats
+ 
+my_stats <- function(values, parametric = TRUE, allow_print = FALSE)
+{
+  if  (parametric) 
+    {
+    central_tendency <- mean(values)
+    spread <- sd(values)
+  }
+  else
+  {
+    central_tendency <- median(values)
+    spread  <- mad(values)
+  }
+  if(allow_print & parametric)
+  {
+    # CONSTRUCT relevant output
+    cat("mean = ", central_tendency, "\n", "SD = ", spread, "\n")
+  }
+  else if (allow_print & !parametric)
+  {
+    cat("median =", central_tendency, "\n", "MAD = ", spread, "\n")
+  }
+}
+sample_vector <- c(0.432, 1.234, 0.567)
+result <- my_stats(sample_vector, FALSE, TRUE)
